@@ -1,12 +1,12 @@
 # WSL에서 PHP 세팅할 때 마주했던 트러블슈팅
 
 ## Failed to load resource: the server responded with a status of 500 (Internal Server Error)
-이거 걍 php mysqli extension 세팅 안해줘서 그랬던거였음 ㅋ (Tlqkf)
+> 이거 걍 php mysqli extension 세팅 안해줘서 그랬던거였음 ㅋ (Tlqkf)
 ```bash
 sudo apt-get install php-mysql
 ```
 ## 파일 생성 오류
-php 개발 디렉토리에서 파일을 생성하려는데 권한 부족의 이유로 오류가 발생할 수 있음 그럴때는 그냥 루트 사용자로 전환해서 해당 사용자한테 디렉토리 권한 부여해주면 끝임
+> php 개발 디렉토리에서 파일을 생성하려는데 권한 부족의 이유로 오류가 발생할 수 있음 그럴때는 그냥 루트 사용자로 전환해서 해당 사용자한테 디렉토리 권한 부여해주면 끝임
 ### 디렉토리 및 하위 파일에 대한 소유권 부여
 ```bash
 sudo chown -R k2404:k2404 /home/<username>/<directory_path>
@@ -28,7 +28,7 @@ sudo chmod -R 755 /home/<username>/<directory_path>
 ```bash
 sudo vi /etc/apache2/sites-available/000-default.conf
 ```
-아파치 세팅 파일을 vi에디터로 열어봅시다.
+> 아파치 세팅 파일을 vi에디터로 열어봅시다.
 ```vi
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
@@ -50,7 +50,7 @@ sudo vi /etc/apache2/sites-available/000-default.conf
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
-이딴게 뜰텐데 여기서 중요한 건
+> 이딴게 뜰텐데 여기서 중요한 건
 ```vi
 DocumentRoot /home/k2404/projects/php-test
 <Directory /home/k2404/projects/php-test>
@@ -59,10 +59,10 @@ DocumentRoot /home/k2404/projects/php-test
         Require all granted
 </Directory>
 ```
-이 부분임.
-DocumentRoot랑 <Directory ~ 부분에는 작업할 디렉토리 경로를 넣어주면 됨
-그리고 ESC wq! Enter
-그리고 아파치 서버 재시작
+> 이 부분임.
+> DocumentRoot랑 <Directory ~ 부분에는 작업할 디렉토리 경로를 넣어주면 됨
+> 그리고 ESC wq! Enter
+> 그리고 아파치 서버 재시작
 ```bash
 sudo systemctl restart apache2
 ```
