@@ -23,3 +23,46 @@ sudo chmod -R 755 /home/<username>/<directory_path>
 > [7.5.5]는 각각 [<소유자>.<그룹 사용자>.<기타 사용자>] 로 분류됨. 소유자만이 전체 권한을 갖고, 나머지 사용자는 읽기, 실행만 가능하고 쓰기는 불가능함.
 > 구글링하면서 개발을 하든, 세팅을 하든 할 때, 각 명령어들이 무슨 역할을 하는지도 함께 공부하면서 하면 더 잘 기억함.
 > 물론 하루 지나면 다 까먹음 ㅋ. 계속 써봐야함.
+
+## 새 디렉토리에서 작업할 시, 추가 세팅이 필요하더라
+```bash
+sudo vi /etc/apache2/sites-available/000-default.conf
+```
+아파치 세팅 파일을 vi에디터로 열어봅시다.
+```vi
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /home/k2404/projects/php-test
+        <Directory /home/k2404/projects/php-test>
+                Options Indexes FollowSymLinks
+                AllowOverride All
+                Require all granted
+        </Directory>
+
+        DocumentRoot /home/k2404/projects/php-shop
+        <Directory /home/k2404/projects/php-shop>
+                Options Indexes FollowSymLinks
+                AllowOverride All
+                Require all granted
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+> 이딴게 뜰텐데 여기서 중요한 건
+```vi
+DocumentRoot /home/k2404/projects/php-test
+<Directory /home/k2404/projects/php-test>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+```
+> 이 부분임.
+> DocumentRoot랑 <Directory ~ 부분에는 작업할 디렉토리 경로를 넣어주면 됨
+> 그리고 ESC wq! Enter
+> 그리고 아파치 서버 재시작
+```bash
+sudo systemctl restart apache2
+```
