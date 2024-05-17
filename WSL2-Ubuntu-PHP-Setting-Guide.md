@@ -38,11 +38,11 @@ sudo apt-get install php
 ```
 ### PHP 디렉토리 경로 설정
 ```bash
-mkdir -p /home/유저명/php 개발 디렉토리
+mkdir -p /home/<username>/<directory_path>
 ```
 ### PHP 디렉토리 경로로 이동
 ```bash
-cd /home/유저명/개발폴더경로
+cd /home/<username>/<directory_path>
 ```
 ### info.php 파일 생성
 ```bash
