@@ -1,5 +1,7 @@
 # wsl2 Ubuntu 에서 PHP 개발환경 세팅하기
+
 ## 기본
+
 ### 패키지 업데이트
 ```bash
 sudo apt update
