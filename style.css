@@ -1,0 +1,82 @@
+/* BASIC */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* WRAP */
+.wrap {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: #0000FF;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    background: #6D6BFF;
+}
+
+nav a {
+    color: #FFFFFF;
+    padding: 10px;
+    line-height: 50px;
+}
+
+/* SECTION */
+section {
+    width: 100%;
+    height: 1000px;
+    background: #CFCFCF;
+}
+
+section h2 {
+    text-align: center;
+    padding: 50px;
+}
+
+section p {
+    line-height: 50px;
+    padding-left: 100px;
+}
+
+section table {
+    width: 800px;
+    height: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+section button {
+    width: 80px;
+    height: 30px;
+}
+
+section .button {
+    width: 80px;
+    height: 30px;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: #0000FF;
+    color: #FFFFFF;
+    text-align: center;
+}
