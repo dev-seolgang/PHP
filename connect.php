@@ -8,9 +8,9 @@
 <body>
     <?php
         $host = 'localhost';
-        $username = 'ubuntukyu';
-        $password = '0107';
-        $database = 'phptestdb';
+        $username = 'username';
+        $password = 'password';
+        $database = 'databasename';
         $conn = mysqli_connect($host, $username, $password, $database);
     ?>
 </body>
