@@ -62,7 +62,7 @@ DocumentRoot /home/k2404/projects/php-test
 > 이 부분임.
 > DocumentRoot랑 <Directory ~ 부분에는 작업할 디렉토리 경로를 넣어주면 됨
 > 그리고 ESC wq! Enter
-> 그리고 아파치 서버 재시작
+> 그리고 작업 디렉토리에서 아파치 서버 재시작
 ```bash
 sudo systemctl restart apache2
 ```
