@@ -8,7 +8,7 @@
 </head>
 <div class="wrap">
 <header>
-    <h1>쇼핑몰 회원관리 프로그램 (with. PHP)</h1>
+    <h1>쇼핑몰 회원관리 프로그램 (with. PHP + MySQL)</h1>
 </header>
 <nav>
     <a href="insert_member.php">회원등록</a>
