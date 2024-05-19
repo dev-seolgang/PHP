@@ -18,7 +18,7 @@ INSERT INTO member_tbl_02 (custno, custname, phone, address, joindate, grade, ci
 ('10005', '진평화', '010-1111-6666', '제주도 제주시 외나무골', '2015-12-25', 'B', '60'),
 ('10006', '차공단', '010-1111-7777', '제주도 제주시 감나무골', '2015-12-11', 'C', '60');
 
--- member_tbl_02
+-- money_tbl_02
 CREATE TABLE money_tbl_02 (
     custno INT(6) NOT NULL,
     salenol INT(8) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE money_tbl_02 (
     PRIMARY KEY(custno, salenol)
 );
 
--- member_tbl_02 데이터 삽입
+-- money_tbl_02 데이터 삽입
 INSERT INTO money_tbl_02 (custno, salenol, pcost, amount, price, pcode, sdate) VALUES
 ('10001', '20160001', 500, 5, 2500, 'A001', '2016-01-01'),
 ('10001', '20160002', 1000, 4, 4000, 'A002', '2016-01-01'),
